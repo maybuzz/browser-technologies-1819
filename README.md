@@ -5,17 +5,17 @@
 ![]()
 
 ## Table of contents
-1. [Install](#Install)
-2. [Features](#Features)
-3. [Research](#Research)
-4. [Links](#Links)
+- [Install](#Install)
+- [Features](#Features)
+- [Research](#Research)
+- [Links](#Links)
   - [My tabs](#My-tabs)
   - [School websites](#School-websites)
   - [News websites](#News-websites)
   - [Public transport](#Public-transport)
-5. [To do](#To-do)
-6. [Resources](#Resources)
-7. [Planning](#Planning)
+- [To do](#To-do)
+- [Resources](#Resources)
+- [Planning](#Planning)
 
 ## Install
 Bla bla over dependencies
