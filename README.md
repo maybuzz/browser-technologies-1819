@@ -219,7 +219,7 @@ Wat afbeeldingen betreft werkt het iets anders. Sommige websites gebruiken afbee
 </details>
 
 ## OBA for dummies
-Om te kijken hoe het met mijn eigen browser tech is gesteld heb ik [project 1]() getest. Als eerst loop ik de features van mijn app door. Vervolgens ga ik bedenken hoe problemen met **accessibility** voorkomen kunnen worden.
+Om te kijken hoe het met mijn eigen browser tech is gesteld heb ik [project 1](https://maybuzz.github.io/project-1-1819/) getest. Als eerst loop ik de features van mijn app door. Vervolgens ga ik bedenken hoe problemen met **accessibility** voorkomen kunnen worden.
 
 - `Overview page` -> Laad alle boeken en cursussen in. Zonder cookies of iets. Simpele router. Wisselen van pagina met muis of tab.
 
@@ -233,7 +233,7 @@ Om te kijken hoe het met mijn eigen browser tech is gesteld heb ik [project 1]()
 
 - `Titels` -> Titels zijn tekst. Teskt is leesbaar als gebruikers kunnen lezen. Als extra ondersteuning zou tekst ook hoorbaar moeten worden. Dmv. screenreaders bijvoorbeeld, of de optie om tekst uit te spreken.
 
-- `Hovers, animaties etc.` -> 
+- `Hovers, animaties etc.` -> Enkele van deze functionaliteiten zijn op verschillende devices niet mogelijk. Functionaliteiten verstoppen onder hovers is niet handig voor bijvoorbeeld screenreaders. Uitklap menu's of gewoon op de voorgrond tonen kunnen betere oplossingen zijn.
 
 ## To-do
 - [x] Feature onderzoek   
