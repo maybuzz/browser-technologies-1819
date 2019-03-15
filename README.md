@@ -2,23 +2,22 @@
 
 ## Summary
 
-![]()
+![oba webapp](/img/webapp.png)
 
 ## Table of contents
 - [Install](#Install)
 - [Features](#Features)
 - [Research](#Research)
-- [Links](#Links)
   - [My tabs](#My-tabs)
   - [School websites](#School-websites)
   - [News websites](#News-websites)
   - [Public transport](#Public-transport)
+- [OBA for dummies](#OBA-for-dummies)
 - [To do](#To-do)
 - [Resources](#Resources)
 - [Planning](#Planning)
 
 ## Install
-Bla bla over dependencies
 
 ```bash
   # open your terminal and add this to clone the repo
@@ -30,10 +29,11 @@ Bla bla over dependencies
 2. Afbeeldingen
 
 ## Research
-
-
-## Links
 Ik heb onderzoek gedaan naar enkele websites op het web. Voor mijn onderzoek heb ik gebruik gemaakt van de Google Chrome browser. Ik heb de cookies binnen de browser geblokkeerd, eveneens als de afbeeldingen.
+
+Wanneer cookies uitgeschakeld zijn is het inloggen op een website onmogelijk. Dit is logisch aangezien niks opgeslagen kan worden. Ook blijven sommige websites cookie meldingen geven, omdat zij ook niet op kunnen (willen) slaan dat de gebruiker op ja of nee heeft geklikt. Sommige websites zijn hierdoor onmogelijk te gebruiken. Dit is natuurlijk niet goed. Gelukkig zijn er sommige websites die dit weten te voorkomen. Content kan geladen worden, maar enkele functionaliteiten zullen niet optimaal werken.
+
+Wat afbeeldingen betreft werkt het iets anders. Sommige websites gebruiken afbeeldingen om de content te ondersteunen. In sommige gevallen zijn de afbeeldingen essentieel om de content te bekijken. [Youtube](www.youtube.com) bijvoorbeeld, is afhankelijk van afbeeldingen om video's af te spelen. Content wordt geladen maar video's spelen niet af.
 
 ### My tabs
 
@@ -218,8 +218,31 @@ Ik heb onderzoek gedaan naar enkele websites op het web. Voor mijn onderzoek heb
 </p>
 </details>
 
+## OBA for dummies
+Om te kijken hoe het met mijn eigen browser tech is gesteld heb ik [project 1]() getest. Als eerst loop ik de features van mijn app door. Vervolgens ga ik bedenken hoe problemen met **accessibility** voorkomen kunnen worden.
+
+- `Overview page` -> Laad alle boeken en cursussen in. Zonder cookies of iets. Simpele router. Wisselen van pagina met muis of tab.
+
+- `Detail page` -> Afbeeldingen en extra informatie over het betreffende onderdeel. Server side rendering.
+
+- `Horizontal scroll` -> Scrollen met muis of met tabs.
+
+- `Logo's en iconen` -> Logo's en iconen zouden altijd geladen moeten worden. Bad practice zou zijn om logo's en iconen als afbeeldingen in te laden. In dat geval zouden deze niet zichtbaar zijn wanneer afbeeldingen niet ingeladen worden.
+
+- `Cover images` -> Afbeeldingen van de boeken en/of cursussen. Zonder afbeeldingen is het niet mogelijk om een cover over te brengen aan de gebruiker. Als fallback zouden er icoontjes of kleurtjes getoond kunnen worden. Over het algemeen wordt de alt tekst getoond als de afbeelding niet laad.
+
+- `Titels` -> Titels zijn tekst. Teskt is leesbaar als gebruikers kunnen lezen. Als extra ondersteuning zou tekst ook hoorbaar moeten worden. Dmv. screenreaders bijvoorbeeld, of de optie om tekst uit te spreken.
+
+- `Hovers, animaties etc.` -> 
+
 ## To-do
-- [x] ...   
+- [x] Feature onderzoek   
+- [x] README schrijven   
+- [x] Mogelijke problemen oba app in kaart brengen   
+- [ ] Oplossingen bedenken   
+- [ ] Oplossingen proberen   
+- [ ] Device lab test oba app   
+- [ ] Screenreader test   
 
 ## Resources
 - [What are cookies](http://www.whatarecookies.com/)
@@ -231,17 +254,17 @@ Ik heb onderzoek gedaan naar enkele websites op het web. Voor mijn onderzoek heb
 <details><summary>Week 1</summary>
 <p>
 <ul>
-  <li>**Maandag** - Introductie van het vak.</li>
+  <li>Maandag - Introductie van het vak.</li>
   <li>College over waarom PE.</li>
-  <li>**Briefing opdracht 1A** - Breek het web.</li>
+  <li>Briefing opdracht 1A - Breek het web.</li>
   <li>Uitdelen 2 features per student.</li>
-  <li>**Werkvorm** - Samen kijken hoe kun je een features kan testen.</li>
-  <li>**Woensdag** - Opdracht 1A in groepen bespreken.</li>
-  <li>**College** - Samenvatting over hoe je de features kan testen.</li>
-  <li>**Weekly Nerd** ICONS: Maike Klip - ontwerpen voor vluchtelingen</li>
-  <li>**Briefing opdracht 1B** - Fork je OBA - OBAapp testen.</li>
-  <li>**Werkvorm** - Device lab gebruiken voor je OBAapp</li>
-  <li>**Vrijdag** - Opleveren opdracht 1B.</li>
+  <li>Werkvorm - Samen kijken hoe kun je een features kan testen.</li>
+  <li>Woensdag - Opdracht 1A in groepen bespreken.</li>
+  <li>College - Samenvatting over hoe je de features kan testen.</li>
+  <li>Weekly Nerd ICONS: Maike Klip - ontwerpen voor vluchtelingen</li>
+  <li>Briefing opdracht 1B - Fork je OBA - OBAapp testen.</li>
+  <li>Werkvorm - Device lab gebruiken voor je OBAapp</li>
+  <li>Vrijdag - Opleveren opdracht 1B.</li>
   <li>Resultaten in groepjes bespreken. Snap je PE?</li>
 </ul>
 </p>
@@ -250,15 +273,15 @@ Ik heb onderzoek gedaan naar enkele websites op het web. Voor mijn onderzoek heb
 <details><summary>Week 2</summary>
 <p>
 <ul>
-  <li>**Maandag** - College over browsers. 'an hostile environment'.</li>
-  <li>**Briefing opdracht 2** - Progressive Enhanced Browser Technologies</li>
+  <li>Maandag - College over browsers. 'an hostile environment'.</li>
+  <li>Briefing opdracht 2 - Progressive Enhanced Browser Technologies</li>
   <li>Over de core functionaliteit, de acceptable en de enjoyable laag.</li>
-  <li>**Werkvorm** - In de klas schetsen van de core functionaliteit.</li>
-  <li>**Woensdag** - College: Case studies hoe bouw je een PE functionaliteit, met de 3 lagen van dev.</li>
-  <li>**Werkvorm** - Code review van de feature detectie van de core functionaliteit.</li>
-  <li>**Begeleiding opdracht 2** - Iedereen spreken om de plannen te horen.</li>
-  <li>**Weekly Nerd** ICONS: A11y - Ischa Gast - Schiphol</li>
-  <li>**Vrijdag** Feedback op de eerste versie en afspraken maken.</li>
+  <li>Werkvorm - In de klas schetsen van de core functionaliteit.</li>
+  <li>Woensdag - College: Case studies hoe bouw je een PE functionaliteit, met de 3 lagen van dev.</li>
+  <li>Werkvorm - Code review van de feature detectie van de core functionaliteit.</li>
+  <li>Begeleiding opdracht 2 - Iedereen spreken om de plannen te horen.</li>
+  <li>Weekly Nerd ICONS: A11y - Ischa Gast - Schiphol</li>
+  <li>Vrijdag Feedback op de eerste versie en afspraken maken.</li>
 </ul>
 </p>
 </details>
@@ -266,11 +289,11 @@ Ik heb onderzoek gedaan naar enkele websites op het web. Voor mijn onderzoek heb
 <details><summary>Week 3</summary>
 <p>
 <ul>
-  <li>**Maandag** - Case studies Feature detection op basis van het werk dat we vrijdag hebben gezien.</li>
+  <li>Maandag - Case studies Feature detection op basis van het werk dat we vrijdag hebben gezien.</li>
   <li>Rubric bespreken.</li>
-  <li>**Begeleiding opdracht 2** - Iedereen spreken en vorderingen doornemen.</li>
-  <li>**Weekly Nerd** - PE Voorhoede</li>
-  <li>**Vrijdag** - Opleveren</li>
+  <li>Begeleiding opdracht 2 - Iedereen spreken en vorderingen doornemen.</li>
+  <li>Weekly Nerd - PE Voorhoede</li>
+  <li>Vrijdag - Opleveren</li>
 </ul>
 </p>
 </details>
