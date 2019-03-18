@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+  <% include partials/head.ejs %>
+
+  <% include partials/header.ejs %>
+
+  <main>
+
+    <% include partials/product.ejs %>
+    <% include partials/product.ejs %>
+    <% include partials/product.ejs %>
+
+  </main>
+
+  <footer class="footer">
+    <form class="item" action="/:item" method="post">
+      <input class="item__name" type="text" name="product name" placeholder="product name...">
+      <input class="item__quantity" type="number" name="quantity" value="1" placeholder="1">
+      <button class="btn btn-add" type="submit" name="add product">+</button>
+    </form>
+  </footer>
+
+</body>
+</html>
