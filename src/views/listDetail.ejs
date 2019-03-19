@@ -4,7 +4,7 @@
 <body>
   <% include partials/head.ejs %>
 
-  <% include partials/header.ejs %>
+  <% include partials/detailHeader.ejs %>
 
   <main>
 
@@ -15,7 +15,7 @@
   </main>
 
   <footer class="footer">
-    <form class="item" action="/:item" method="post">
+    <form class="additem" action="/:name" method="post">
       <input class="item__name" type="text" name="product name" placeholder="product name...">
       <input class="item__quantity" type="number" name="quantity" value="1" placeholder="1">
       <button class="btn btn-add" type="submit" name="add product">+</button>

@@ -24,6 +24,7 @@ app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .get('/', index)
+  .get('/:name', detail)
   .listen(1999)
 
 const createListWithProduct = async function () {
@@ -99,9 +100,14 @@ const product = {
 function index(req, res) {
   console.log("index")
 
-  // res.render('main.ejs', {
-  //   page: 0
-  // })
+  res.render('main.ejs', {
+    page: 0
+  })
+
+}
+
+function detail(req, res) {
+  console.log("index")
 
   res.render('listDetail.ejs', {
     page: 1

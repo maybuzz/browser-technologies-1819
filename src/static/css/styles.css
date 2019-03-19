@@ -4,6 +4,7 @@
   --color-text-light: #FFF;
   --color-text-middle: #EEE;
   --color-text-dark: #AAA;
+  --color-text-special: tomato;
   --color-backgr-light: #FFF;
   --color-backgr-middle: #CCC;
   --color-overlay: rgba(44,62,80,.8);
@@ -53,6 +54,10 @@ li:last-of-type {
   color: var(--color-text-dark);
 }
 
+.none {
+  display: none;
+}
+
 .menu {
   color: var(--color-text-dark);
 }
@@ -74,12 +79,15 @@ li:last-of-type {
   position: sticky;
   bottom: 0;
   background-color: var(--color-backgr-light);
+  height: 10vh;
+}
+
+.footer__link {
+  font-size: 1.5rem;
+  color: var(--color-text-special);
 }
 
 /* general */
-.link {
-
-}
 
 .overlay {
   position: absolute;
@@ -117,7 +125,8 @@ li:last-of-type {
 }
 
 /* form */
-.item {
+/* add product */
+.additem {
   height: 10vh;
 }
 
@@ -130,13 +139,13 @@ li:last-of-type {
 
 .item__quantity {
   font-size: 1rem;
-  border: 1px solid var(--color-border-middle);
   padding: .1rem;
   width: 15%;
   height: 100%;
   text-align: center;
 }
 
+/* add list */
 .addlist {
   padding: 0 .5rem;
   width: 75%;
@@ -187,25 +196,55 @@ li:last-of-type {
 
 /* list items */
 .list {
+  background-color: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
 
+.list__link {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-areas:
+  "name remove"
+  "date number";
+  color: var(--color-text-special);
 }
 
 .list__name {
-
+  grid-area: name;
+  color: var(--color-text-special);
+  display: inline;
+  font-size: 1.5rem;
 }
 
 .list__date {
-
+  grid-area: date;
+  color: var(--color-text-dark);
+  margin-top: 1rem;
+  display: inline;
 }
 
 .list__number {
+  text-align: right;
+  grid-area: number;
+  color: var(--color-text);
+  float: right;
+  margin-top: 1rem;
+}
 
+.list__remove {
+  color: var(--color-text-special);
+  text-align: right;
+  grid-area: remove;
+  float: right;
 }
 
 /* product items */
 .progress {
-  height: 1rem;
-  border: 2px solid green;
+  height: 1.5rem;
+  background-color: lightgreen;
+  border-bottom: .1rem solid green;
 }
 
 .product {
@@ -237,4 +276,9 @@ li:last-of-type {
   float: right;
   width: 3rem;
   text-align: center;
+}
+
+/* states */
+.product:hover, .product:focus, .list:hover, .list:focus {
+  box-shadow: ;
 }
