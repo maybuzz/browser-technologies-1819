@@ -44,6 +44,7 @@ During this project I will be focussing on accessibility and progressive enhance
 - [x] Node express server   
 - [x] Overview page
 - [x] Detail (list) page
+- Responsive design   
 - [ ] Form actions
   - [ ] Add new list
   - [ ] Remove list
@@ -71,7 +72,9 @@ During this project I will be focussing on accessibility and progressive enhance
   - [ ] Transitions
 
 ## Resources
-- [What are cookies](http://www.whatarecookies.com/)
+- [Mongodb setup 1](https://www.robinwieruch.de/mongodb-express-setup-tutorial/)
+- [Mongodb setup 2](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
+- [Mongoose guide](https://mongoosejs.com/docs/guide.html)
 
 ## Criteria
 <details><summary>Assignment 2</summary>
