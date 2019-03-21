@@ -21,10 +21,13 @@ connectDb().then(async () => {
 
 app
   .use(express.static('static'))
+  .use(bodyParser.urlencoded({ extended: true }))
   .set('view engine', 'ejs')
   .set('views', 'views')
   .get('/', index)
+  .post('/', addList)
   .get('/:name', detail)
+  // .post('/:name', addProduct)
   .listen(1999)
 
 const createListWithProduct = async function () {
@@ -60,48 +63,20 @@ const createListWithProduct = async function () {
 }
 
 const list = {
-  list: function () {
-    const listSchema = new mongoose.Schema({
-      listName: {
-        type: String,
-        unique: true
-      }
-    })
-
-    listSchema.statics.findByName = async function (name) {
-      let list = await this.findOne({
-        listName: name,
-        date: { type: Date, default: Date.now }
-      })
-
-      return list
-    }
-
-    listSchema.pre('remove', function(next) {
-      this.model('Product').deleteMany({ list: this._id }, next)
-    })
-
-    const List = mongoose.model('List', listSchema)
-  }
+  list: ["Thuis", "School", "Blub"]
 }
 
 const product = {
-  product: function () {
-    const productSchema = new mongoose.Schema({
-      productName: String,
-      quantity: Number,
-      list: { type: mongoose.Schema.Types.ObjectId, ref: 'List' },
-    })
-
-    const Product = mongoose.model('Product', productSchema)
-  }
+  product: function () {}
 }
 
 function index(req, res) {
   console.log("index")
 
+  const lists = list.list
+
   res.render('main.ejs', {
-    page: 0
+    list: lists
   })
 
 }
@@ -112,4 +87,31 @@ function detail(req, res) {
   res.render('listDetail.ejs', {
     page: 1
   })
+}
+
+function addList(req, res) {
+  var lists = list.list
+  console.log(lists)
+  var newList = req.body.list
+
+  lists.push(newList)
+
+  res.redirect('/' + newList, {list: lists})
+
+  // db.collection('lists').insert({
+  //   name: req.body.list,
+  // }, done)
+
+  // function done(err, data) {
+  //   if (err) {
+  //     res.status(404).render('error.ejs', {
+  //       id: 404,
+  //       title: 'Not found',
+  //       detail: 'Oops, er gaat wat mis...'
+  //     })
+  //   } else {
+  //     req.body.list = name
+  //     res.redirect('/' + name)
+  //   }
+  // }
 }

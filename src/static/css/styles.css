@@ -2,11 +2,11 @@
 :root {
   --color-text: #000;
   --color-text-light: #FFF;
-  --color-text-middle: #EEE;
-  --color-text-dark: #AAA;
-  --color-text-special: tomato;
+  --color-text-middle: #F7C8B7;
+  --color-text-dark: #42FFD9;
+  --color-text-special: #3A4F41;
   --color-backgr-light: #FFF;
-  --color-backgr-middle: #CCC;
+  --color-backgr-middle: #D8C4C0;
   --color-overlay: rgba(44,62,80,.8);
   --color-border-middle: #ccc;
 }
@@ -33,6 +33,19 @@ main {
   padding-top: 1rem;
 }
 
+svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+svg:first-of-type {
+  float: left;
+}
+
+svg:last-of-type {
+  float: right;
+}
+
 .nav {
   display: flex;
   list-style-type: none;
@@ -55,7 +68,7 @@ li:last-of-type {
 }
 
 .none {
-  display: none;
+  color: #fff;
 }
 
 .menu {
@@ -63,7 +76,7 @@ li:last-of-type {
 }
 
 .header__title {
-  color: var(--color-text-dark);
+  color: var(--color-text-special);
 }
 
 .header {
