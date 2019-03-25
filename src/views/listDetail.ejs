@@ -12,6 +12,7 @@
       <div class="product">
         <label class="product__name"><input class="product__check" type="checkbox" name="checkbox" value="1"><%= product[i] %></label>
         <input class="product__quantity" type="number" value="<%= quantity[i] %>" name="product quantity">
+        <button class="list__remove" formaction="/removetask" type="submit">X</button>
       </div>
     <% } %>
 
@@ -19,7 +20,7 @@
 
   <footer class="footer">
     <form class="additem" action="/:name" method="POST">
-      <input class="item__name" type="text" name="product" placeholder="product name...">
+      <input class="item__name" type="text" name="product" placeholder="Product name...">
       <input class="item__quantity" type="number" name="quantity" value="1" placeholder="1">
       <button class="btn btn-add" type="submit" name="add-product">+</button>
     </form>

@@ -44,7 +44,7 @@
       <div class="list">
         <a class="list__link" href="<%= list[i] %>">
           <h2 class="list__name"><%= list[i] %></h2>
-          <button class="list__remove" formaction="/removeList" type="submit"> X </button>
+          <button id="remove" class="list__remove" formaction="/removeList" type="submit"> X </button>
           <p class="list__number">5/12</p>
           <p class="list__date">04/03/1999</p>
         </a>
@@ -54,8 +54,17 @@
   </main>
 
   <footer class="footer">
-    <a class="footer__link" href="/add">add new list</a>
+    <form class="addlist" action="/" method="POST">
+
+      <input class="addlist__name" type="text" name="list" placeholder="Name your list...">
+      <!-- <p class="addlist__name-max">max. 25 characters</p> -->
+
+        <button class="btn btn-submit" type="submit" name="add-list">add list</button>
+
+    </form>
   </footer>
+
+  <script src="/js/remove.js"></script>
 
 </body>
 </html>
