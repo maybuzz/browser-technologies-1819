@@ -25,9 +25,10 @@ app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .get('/', index)
+  .get('/add', form)
   .post('/', addList)
   .get('/:name', detail)
-  // .post('/:name', addProduct)
+  .post('/:name', addProduct)
   .listen(1999)
 
 const createListWithProduct = async function () {
@@ -63,11 +64,12 @@ const createListWithProduct = async function () {
 }
 
 const list = {
-  list: ["Thuis", "School", "Blub"]
+  list: ["Ontbijt", "Lunch", "Avondeten"]
 }
 
 const product = {
-  product: function () {}
+  products: ["Brood", "Melk", "Eieren"],
+  quantity: ["1", "1", "6"]
 }
 
 function index(req, res) {
@@ -78,40 +80,51 @@ function index(req, res) {
   res.render('main.ejs', {
     list: lists
   })
-
 }
 
-function detail(req, res) {
-  console.log("index")
+function form (req, res) {
+  console.log("add new list")
 
-  res.render('listDetail.ejs', {
-    page: 1
-  })
+  res.render('newList.ejs')
 }
 
 function addList(req, res) {
+  console.log("redirect to list")
+
   var lists = list.list
   console.log(lists)
   var newList = req.body.list
 
   lists.push(newList)
 
-  res.redirect('/' + newList, {list: lists})
+  res.redirect('/' + newList)
+}
 
-  // db.collection('lists').insert({
-  //   name: req.body.list,
-  // }, done)
+function detail(req, res) {
+  console.log("detail")
 
-  // function done(err, data) {
-  //   if (err) {
-  //     res.status(404).render('error.ejs', {
-  //       id: 404,
-  //       title: 'Not found',
-  //       detail: 'Oops, er gaat wat mis...'
-  //     })
-  //   } else {
-  //     req.body.list = name
-  //     res.redirect('/' + name)
-  //   }
-  // }
+  const products = product.products
+  const quantity = product.quantity
+
+  res.render('listDetail.ejs', {
+    product: products,
+    quantity: quantity
+  })
+}
+
+function addProduct(req, res) {
+  console.log("add product to list")
+
+  var products = product.products
+  var quantities = product.quantity
+
+  console.log(products)
+
+  var newProduct = req.body.product
+  var quantity = req.body.quantity
+
+  products.push(newProduct)
+  quantities.push(quantity)
+
+  res.redirect('/:name')
 }

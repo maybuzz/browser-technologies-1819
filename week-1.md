@@ -192,7 +192,7 @@ Om te kijken hoe het met mijn eigen browser tech is gesteld heb ik [project 1](h
 ## To-do
 - [x] Feature onderzoek   
 - [x] Mogelijke problemen oba app in kaart brengen   
-- [ ] Device lab test   
+- [x] Device lab test   
 - [ ] Screenreader test   
 - [ ] Progressive enhancement toepassen   
   - [x] Zonder js (`express`, `ejs` & `nodejs`)   

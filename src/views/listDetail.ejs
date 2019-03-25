@@ -8,9 +8,12 @@
 
   <main>
 
-    <% include partials/product.ejs %>
-    <% include partials/product.ejs %>
-    <% include partials/product.ejs %>
+    <% for( var i = 0; i < product.length; i++){ %>
+      <div class="product">
+        <label class="product__name"><input class="product__check" type="checkbox" name="checkbox" value="1"><%= product[i] %></label>
+        <input class="product__quantity" type="number" value="<%= quantity[i] %>" name="product quantity">
+      </div>
+    <% } %>
 
   </main>
 

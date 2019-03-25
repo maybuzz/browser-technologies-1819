@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+  <% include partials/head.ejs %>
+
+  <% include partials/header.ejs %>
+
+  <main>
+
+    <div class="overlay">
+      <form class="addlist" action="/" method="POST">
+
+        <input class="addlist__name" type="text" name="list" placeholder="Name your list">
+        <p class="addlist__name-max">max. 25 characters</p>
+
+        <a class="btn btn-cancel" href="/">cancel</a>
+        <button class="btn btn-submit" type="submit" name="add-list">add list</button>
+      </form>
+    </div>
+
+  </main>
+
+</body>
+</html>

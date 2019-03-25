@@ -40,11 +40,13 @@ During this project I will be focussing on accessibility and progressive enhance
 ## Progressive enhancement
 
 ## To-do
+- [x] Device lab
+- [ ] Screen reader test
 - [x] Flowchart concept   
 - [x] Node express server   
 - [x] Overview page
 - [x] Detail (list) page
-- Responsive design   
+- [ ] Responsive design   
 - [ ] Form actions
   - [ ] Add new list
   - [ ] Remove list
@@ -53,21 +55,18 @@ During this project I will be focussing on accessibility and progressive enhance
 - [x] Concrete, correct HTML   
 - [x] Functional without js   
 - [ ] Solid CSS   
-  - [ ] Header overview page   
-  - [ ] Footer overview page
-  - [ ] Nav icons
+  - [x] Nav icons
   - [ ] Side menu
   - [ ] Page titles
   - [ ] Number controls
   - [ ] Set date
 - [ ] Enhancements
-  - [ ] Set avatar to list + fallback
   - [ ] Mongo database
   - [ ] localStorage
   - [ ] Custom fonts + fallbacks
   - [ ] Inline editing
-  - [ ] Progress bar
   - [ ] List item counter
+  - [ ] Progress bar
   - [ ] Check order (checked at bottom)
   - [ ] Transitions
 
