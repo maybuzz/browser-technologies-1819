@@ -11,6 +11,7 @@ Grocery list application, focused on accessibility and progressive enhancement. 
 - [Concept](#Concept)
   - [Wireflow](#Wireflow)
 - [Features](#Features)
+- [Feature detection](#Feature-detection)
 - [Progressive enhancement](#Progressive-enhancement)
 - [To do](#To-do)
 - [Resources](#Resources)
@@ -49,7 +50,7 @@ During this project I will be focussing on accessibility and progressive enhance
   - [x] Add
   - [ ] Remove
 - [ ] Server side enhancements
-  - [ ] Item counter
+  - [x] Item counter
   - [ ] Check order (checked at bottom)
   - [ ] Custom fonts + fallbacks
 - [ ] Client side enhancements
@@ -57,10 +58,10 @@ During this project I will be focussing on accessibility and progressive enhance
   - [ ] Progress bar
 - [ ] CSS styling   
   - [x] Nav icons
-  - [ ] Header styling
-  - [ ] Page titles
+  - [x] Header styling
+  - [x] Page titles
   - [ ] Transitions
-  - [ ] Overall styling
+  - [x] Overall styling
 - [x] Concrete, correct HTML   
 - [x] Functional without js   
 - [ ] Extra's
@@ -68,6 +69,10 @@ During this project I will be focussing on accessibility and progressive enhance
   - [ ] Set date
   - [ ] Number controls
   - [ ] Mongo database
+- [ ] **json database**
+- [ ] divs to ul/list items
+- [ ] semantisch correct maken, screenreader check
+- [ ] contrast checker 
 
 ## Resources
 - [Mongodb setup 1](https://www.robinwieruch.de/mongodb-express-setup-tutorial/)
