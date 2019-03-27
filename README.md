@@ -42,33 +42,32 @@ During this project I will be focussing on accessibility and progressive enhance
 ## To-do
 - [x] Device lab
 - [ ] Screen reader test
-- [x] Flowchart concept   
+- [x] Flowchart   
 - [x] Node express server   
-- [x] Overview page
-- [x] Detail (list) page
-- [ ] Responsive design   
+- [x] Responsive design   
 - [ ] Form actions
-  - [ ] Add new list
-  - [ ] Remove list
-  - [ ] Add new product
-  - [ ] Remove product
+  - [x] Add
+  - [ ] Remove
+- [ ] Server side enhancements
+  - [ ] Item counter
+  - [ ] Check order (checked at bottom)
+  - [ ] Custom fonts + fallbacks
+- [ ] Client side enhancements
+  - [ ] localStorage
+  - [ ] Progress bar
+- [ ] CSS styling   
+  - [x] Nav icons
+  - [ ] Header styling
+  - [ ] Page titles
+  - [ ] Transitions
+  - [ ] Overall styling
 - [x] Concrete, correct HTML   
 - [x] Functional without js   
-- [ ] Solid CSS   
-  - [x] Nav icons
+- [ ] Extra's
   - [ ] Side menu
-  - [ ] Page titles
-  - [ ] Number controls
   - [ ] Set date
-- [ ] Enhancements
+  - [ ] Number controls
   - [ ] Mongo database
-  - [ ] localStorage
-  - [ ] Custom fonts + fallbacks
-  - [ ] Inline editing
-  - [ ] List item counter
-  - [ ] Progress bar
-  - [ ] Check order (checked at bottom)
-  - [ ] Transitions
 
 ## Resources
 - [Mongodb setup 1](https://www.robinwieruch.de/mongodb-express-setup-tutorial/)

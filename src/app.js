@@ -17,22 +17,29 @@ app
   .post('/:name', addProduct)
   .listen(1999)
 
-const list = {
-  list: ["Ontbijt", "Lunch", "Avondeten"]
-}
-
-const product = {
-  products: ["Brood", "Melk", "Eieren"],
-  quantity: ["1", "1", "6"]
-}
+const lists = [
+  {
+    name: "ontbijt",
+    date: "22/3/2019",
+    items: [ { name: "brood", quantity: 1 }, { name: "melk", quantity: 1 }, { name: "eieren", quantity: 6 } ]
+  },
+  {
+    name: "lunch",
+    date: "22/3/2019",
+    items: [ { name: "croissantjes", quantity: 4}, { name: "jam", quantity: 1}, { name: "pesto", quantity: 1}, { name: "kaas", quantity: 1}]
+  },
+  {
+    name: "diner",
+    date: "22/3/2019",
+    items: [ { name: "pasta", quantity: 1 }, { name: "tomaten", quantity: 4}, { name: "prei", quantity: 1}, { name: "saus", quantity: 1}, { name: "wortel", quantity: 4}, { name: "toetjes", quantity: 4}]
+  }
+]
 
 function index(req, res) {
   console.log("index")
 
-  const lists = list.list
-
   res.render('main.ejs', {
-    list: lists
+    lists: lists
   })
 }
 
@@ -45,40 +52,53 @@ function form (req, res) {
 function addList(req, res) {
   console.log("redirect to list")
 
-  var lists = list.list
-  console.log(lists)
-  var newList = req.body.list
+  const ts = new Date()
+  const date = ts.toDateString()
+  const list = lists
 
-  lists.push(newList)
+  const newList = req.body.list.toLowerCase()
+
+  list.push({name: newList, date: date, items: []})
 
   res.redirect('/' + newList)
 }
 
 function detail(req, res) {
-  console.log("detail")
+  console.log("detail", req.params.name)
 
-  const products = product.products
-  const quantity = product.quantity
+  const name = req.params.name
+  const list = lists.find(list => list.name === req.params.name)
+  const totalLists = lists
+
+  if (!list) {
+    // bestaat niet, dus render 404
+    return res.end('Not found')
+  }
 
   res.render('listDetail.ejs', {
-    product: products,
-    quantity: quantity
+    name: name,
+    list: list,
+    lists: lists
   })
 }
 
 function addProduct(req, res) {
   console.log("add product to list")
+  let currentList = req.params.name
 
-  var products = product.products
-  var quantities = product.quantity
-
-  console.log(products)
-
-  var newProduct = req.body.product
+  var newProduct = req.body.product.toLowerCase()
   var quantity = req.body.quantity
 
-  products.push(newProduct)
-  quantities.push(quantity)
 
-  res.redirect('/:name')
+  const found = lists.find(item => item.name.toLowerCase() === req.params.name.toLowerCase())
+
+  if (!found) {
+    // lijst bestaat niet
+  }
+
+  found.items.push({name: newProduct, quantity: quantity})
+
+
+  res.redirect('/'+req.params.name)
+
 }
