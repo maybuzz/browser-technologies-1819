@@ -18,12 +18,14 @@
     <ul class="lists">
       <% lists.forEach(list => { %>
         <li class="lists__list">
-          <a class="list__link" href="<%= list.name %>">
-            <h2 class="list__name"><%= list.name %></h2>
-            <p class="list__number">total: <%= list.items.length %></p>
-            <p class="list__date"><%= list.date %></p>
-            <button id="remove" class="list__remove" formaction="/removeList" type="submit">remove</button>
-          </a>
+          <form class="" action="index.html" method="post">
+            <a class="list__link" href="<%= list.name %>">
+              <h2 class="list__name"><%= list.name %></h2>
+              <p class="list__number">total: <%= list.items.length %></p>
+              <p class="list__date"><%= list.date %></p>
+              <input id="remove" class="list__remove" formaction="/remove/<%= list.name %>" type="submit" value="delete">
+            </a>
+          </form>
         </li>
       <% }) %>
     </ul>
@@ -37,8 +39,6 @@
     </form>
 
   </footer>
-
-  <script src="/js/remove.js"></script>
 
 </body>
 </html>

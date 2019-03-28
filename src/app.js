@@ -3,102 +3,139 @@
 const ejs = require('ejs')
 const express = require('express')
 const bodyParser = require('body-parser')
+const fs = require('fs')
 const app = express()
 
 app
-  .use(express.static('static'))
+  .use(express.static('src/static'))
   .use(bodyParser.urlencoded({ extended: true }))
   .set('view engine', 'ejs')
-  .set('views', 'views')
+  .set('views', 'src/views')
   .get('/', index)
-  .get('/add', form)
   .post('/', addList)
+  .post('/remove/:id', removeList)
   .get('/:name', detail)
-  .post('/:name', addProduct)
+  .post('/:name', addTask)
+  .post('/delete/:name/:id', removeTask)
+  .post('/save/:name', saveData)
   .listen(1999)
-
-const lists = [
-  {
-    name: "ontbijt",
-    date: "22/3/2019",
-    items: [ { name: "brood", quantity: 1 }, { name: "melk", quantity: 1 }, { name: "eieren", quantity: 6 } ]
-  },
-  {
-    name: "lunch",
-    date: "22/3/2019",
-    items: [ { name: "croissantjes", quantity: 4}, { name: "jam", quantity: 1}, { name: "pesto", quantity: 1}, { name: "kaas", quantity: 1}]
-  },
-  {
-    name: "diner",
-    date: "22/3/2019",
-    items: [ { name: "pasta", quantity: 1 }, { name: "tomaten", quantity: 4}, { name: "prei", quantity: 1}, { name: "saus", quantity: 1}, { name: "wortel", quantity: 4}, { name: "toetjes", quantity: 4}]
-  }
-]
 
 function index(req, res) {
   console.log("index")
 
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+
   res.render('main.ejs', {
-    lists: lists
+    lists: data
   })
-}
-
-function form (req, res) {
-  console.log("add new list")
-
-  res.render('newList.ejs')
 }
 
 function addList(req, res) {
   console.log("redirect to list")
 
-  const ts = new Date()
-  const date = ts.toDateString()
-  const list = lists
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
 
-  const newList = req.body.list.toLowerCase()
+  const newList = {
+    name: req.body.list.toLowerCase(),
+    date: new Date().toDateString(),
+    items: []
+  }
 
-  list.push({name: newList, date: date, items: []})
+  data.push(newList)
 
-  res.redirect('/' + newList)
+  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+
+  res.redirect('/' + newList.name)
+}
+
+function removeList(req, res, err){
+  console.log("remove list")
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+
+  let id = req.params.id
+
+  const updatedLists = data.filter(list => list.name !== id)
+
+  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(updatedLists))
+
+  res.redirect('/')
 }
 
 function detail(req, res) {
-  console.log("detail", req.params.name)
+  console.log("detail")
 
-  const name = req.params.name
-  const list = lists.find(list => list.name === req.params.name)
-  const totalLists = lists
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+
+  const list = data.find(list => list.name === req.params.name.toLowerCase())
+  const totalLists = data
 
   if (!list) {
     // bestaat niet, dus render 404
-    return res.end('Not found')
+    return res.render('error.ejs')
   }
 
-  res.render('listDetail.ejs', {
-    name: name,
+  res.render('listDetail', {
+    name: req.params.name.toLowerCase(),
     list: list,
-    lists: lists
+    lists: data
   })
 }
 
-function addProduct(req, res) {
+function addTask(req, res) {
   console.log("add product to list")
-  let currentList = req.params.name
 
-  var newProduct = req.body.product.toLowerCase()
-  var quantity = req.body.quantity
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
 
+  if (req.body.product.length > 0) {
+    let list
+    data.forEach((obj) => {
+      if(obj.name === req.params.name){
+        list = obj
+      }
+    })
 
-  const found = lists.find(item => item.name.toLowerCase() === req.params.name.toLowerCase())
+    const newProduct = {
+      name: req.body.product,
+      quantity: req.body.quantity,
+      checked: false
+    }
 
-  if (!found) {
-    // lijst bestaat niet
+    list.items.push(newProduct)
+
+    fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
   }
 
-  found.items.push({name: newProduct, quantity: quantity})
-
-
-  res.redirect('/'+req.params.name)
-
+  res.redirect('/'+req.params.name.toLowerCase())
 }
+
+function removeTask(req, res) {
+  console.log("remove task")
+
+  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+
+  const name = req.params.name
+  let id = req.params.id
+
+  const list = data.find(list => list.name === name)
+
+  const updatedItems = list.items.filter(item => item.name !== id)
+
+  list.items = updatedItems
+
+  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+
+  res.redirect('/'+req.params.name.toLowerCase())
+}
+
+// function saveData(req, res, err) {
+//   console.log("save data to db")
+//
+//   const body = req.body
+//
+//   console.log(body)
+//
+//   if(document.getElementById("check").checked = true){
+//     console.log("i am checked");
+//   }
+//
+// }

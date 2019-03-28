@@ -1,0 +1,22 @@
+{
+  "data": {
+    "list": {
+      "name": "ontbijt",
+      "date": "22/3/2019",
+      "items": [
+        {
+          "name": "brood",
+          "quantity": 1
+        },
+        {
+          "name": "melk",
+          "quantity": 1
+        },
+        {
+          "name": "eieren",
+          "quantity": 6
+        }
+      ]
+    }
+  }
+}

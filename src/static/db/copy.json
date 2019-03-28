@@ -1,0 +1,17 @@
+[
+  {
+    "name": "ontbijt",
+    "date": "22/3/2019",
+    "items": [ { "name": "brood", "quantity": 1 }, { "name": "melk", "quantity": 1 }, { "name": "eieren", "quantity": 6 } ]
+  },
+  {
+    "name": "lunch",
+    "date": "22/3/2019",
+    "items": [ { "name": "croissantjes", "quantity": 4}, { "name": "jam", "quantity": 1}, { "name": "pesto", "quantity": 1}, { "name": "kaas", "quantity": 1}]
+  },
+  {
+    "name": "diner",
+    "date": "22/3/2019",
+    "items": [ { "name": "pasta", "quantity": 1 }, { "name": "tomaten", "quantity": 4}, { "name": "prei", "quantity": 1}, { "name": "saus", "quantity": 1}, { "name": "wortel", "quantity": 4}, { "name": "toetjes", "quantity": 4}]
+  }
+]

@@ -16,7 +16,7 @@
                 </g>
             </g>
         </svg></a></li>
-        <li><h1 class="header__title"><%= name %></h1></li>
+        <li><h1 id="page" class="header__title"><%= name %></h1></li>
         <li><a class="menu" href="#"><?xml version="1.0" encoding="UTF-8"?>
         <svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -32,40 +32,40 @@
 
   <main>
 
-    <ul class="products">
+    <form class="product__form" action="/save/<%= list.name %>" method="post">
 
-      <% list.items.forEach(product => { %>
-        <li class="products__product">
-          <label class="product__name"><input class="product__check" type="checkbox" name="checkbox" value="1"><%= product.name %></label>
-          <input class="product__quantity" type="number" value="<%= product.quantity %>" name="product quantity">
-          <button class="list__remove" formaction="/removetask" type="submit">X</button>
-        </li>
-      <% }) %>
+      <ul class="products">
 
-    </ul>
-    <!-- <ul class="main-menu">
-      <li class="main-menu-title">
-        <h3>alles</h3>
-      </li>
+        <% list.items.forEach(product => { %>
+          <li class="products__product">
 
-      <% lists.forEach(list => { %>
-        <li class="menu__list">
-          <a class="menu__list__link" href="<%= list.name %>">
-            <h3 class="menu__list__name"><%= list.name %></h3>
-          </a>
-        </li>
-      <% }) %>
+              <input id="check" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" value="<%= product.name %>">
 
-    </ul> -->
+              <label for="check" class="product__name"><%= product.name %></label>
+
+              <input type="hidden" name="checked_<%= product.name %>" value="<%= product.checked %>">
+
+              <input class="product__quantity" type="number" value="<%= product.quantity %>" name="quantity_<%= product.name %>">
+
+              <input class="list__remove" formaction="/delete/<%= list.name %>/<%= product.name %>" type="submit" value="delete">
+
+          </li>
+        <% }) %>
+
+      </ul>
+      <input class="btn btn-save" type="submit" value="opslaan">
+    </form>
+
   </main>
 
   <footer class="footer">
     <form class="additem" action="/<%= list.name %>" method="POST">
       <input class="item__name" type="text" name="product" placeholder="Product name...">
       <input class="item__quantity" type="number" name="quantity" value="1" placeholder="1">
-      <button class="btn btn-add" type="submit" name="add-product">+</button>
+      <input class="btn btn-add" type="submit" name="add-product" value="+">
     </form>
   </footer>
 
+  <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
