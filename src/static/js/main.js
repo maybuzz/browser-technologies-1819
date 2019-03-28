@@ -1,9 +1,9 @@
 // resource addEventListener: https://stackoverflow.com/questions/42080365/using-addeventlistener-and-getelementsbyclassname-to-pass-an-element-id/42080408
 // Monika @monikaas helped me write this save function
 
-var i, el = document.getElementsByClassName('product__check')
-var quantity = document.getElementsByClassName('product__quantity')
-var list = document.getElementById('page').innerHTML
+const i, el = document.getElementsByClassName('product__check')
+const quantity = document.getElementsByClassName('product__quantity')
+const list = document.getElementById('page').innerHTML
 
 for(let i = 0; i < el.length; i++) {
   ((index) => {
