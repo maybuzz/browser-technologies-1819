@@ -17,7 +17,7 @@ app
   .get('/:name', detail)
   .post('/:name', addTask)
   .post('/delete/:name/:id', removeTask)
-  .listen(1999)
+  .listen(process.env.PORT || 1999)
 
 function index(req, res) {
   console.log("index")
