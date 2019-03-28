@@ -74,10 +74,24 @@ During this project I will be focussing on accessibility and progressive enhance
 - [ ] semantisch correct maken, screenreader check
 - [ ] contrast checker
 
+- [ ] Flowchart + concept beschrijven, alle gewenste functionaliteiten beschrijven
+- [ ] Core functionalities app beschrijven, wat wel en niet is gelukt opsommen
+- [ ] Principe PE beschrijven + betrekking tot mijn app
+- [ ] 3 lagen van mijn app beschrijven; functional, usable en pleasurable, aangeven
+- [ ] Contrast checken
+- [ ] Contrast kopje schrijven
+- [ ] Feature detection voor localStorage schrijven
+- [ ] Features opsommen + feature detection kopje schrijven
+- [ ] Feature ondersteuning checken per browser
+- [ ] Accessibility onderzoeken, issues aangeven + beschrijven
+- [ ] Device lab beschrijven + foto's toevoegen
+- [ ] Screen reader test doen + beschrijven
+
+- [ ] Screen reader test week 1 doen + beschrijven en toevoegen aan tests.md
+
+
 ## Resources
-- [Mongodb setup 1](https://www.robinwieruch.de/mongodb-express-setup-tutorial/)
-- [Mongodb setup 2](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
-- [Mongoose guide](https://mongoosejs.com/docs/guide.html)
+- 
 
 ## Criteria
 <details><summary>Assignment 2</summary>
