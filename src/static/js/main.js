@@ -1,18 +1,24 @@
-var i, checkboxes = document.querySelectorAll('input[type=checkbox]');
+// resource addEventListener: https://stackoverflow.com/questions/42080365/using-addeventlistener-and-getelementsbyclassname-to-pass-an-element-id/42080408
+// Monika @monikaas helped me write this save function
 
-var quantity = document.querySelectorAll('input[type=number]');
+var i, el = document.getElementsByClassName('product__check')
+var quantity = document.getElementsByClassName('product__quantity')
+var list = document.getElementById('page').innerHTML
 
-var list = document.getElementById('page').innerHTML;
-
-function save() {
-    for (i = 0; i < checkboxes.length; i++) {
-        localStorage.setItem(list+'-'+checkboxes[i].value, checkboxes[i].checked);
-    }
-
-    console.log(localStorage);
+for(let i = 0; i < el.length; i++) {
+  ((index) => {
+    el[index].addEventListener('click', save)
+  })(i)
 }
 
- //for loading
-for (i = 0; i < checkboxes.length; i++) {
-  checkboxes[i].checked = localStorage.getItem(list+'-'+checkboxes[i].value) === 'true' ? true:false;
+function save() {
+    for (i = 0; i < el.length; i++) {
+        localStorage.setItem(list+'-'+el[i].value, el[i].checked)
+    }
+    console.log(localStorage)
+}
+
+//for loading
+for (i = 0; i < el.length; i++) {
+  el[i].checked = localStorage.getItem(list+'-'+el[i].value) === 'true' ? true:false
 }

@@ -17,7 +17,6 @@ app
   .get('/:name', detail)
   .post('/:name', addTask)
   .post('/delete/:name/:id', removeTask)
-  .post('/save/:name', saveData)
   .listen(1999)
 
 function index(req, res) {
@@ -126,16 +125,3 @@ function removeTask(req, res) {
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
-
-// function saveData(req, res, err) {
-//   console.log("save data to db")
-//
-//   const body = req.body
-//
-//   console.log(body)
-//
-//   if(document.getElementById("check").checked = true){
-//     console.log("i am checked");
-//   }
-//
-// }

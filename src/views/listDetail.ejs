@@ -39,9 +39,9 @@
         <% list.items.forEach(product => { %>
           <li class="products__product">
 
-              <input id="check" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" value="<%= product.name %>">
+              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" value="<%= product.name %>">
 
-              <label for="check" class="product__name"><%= product.name %></label>
+              <label for="<%= product.name %>" class="product__name"><%= product.name %></label>
 
               <input type="hidden" name="checked_<%= product.name %>" value="<%= product.checked %>">
 
@@ -53,7 +53,7 @@
         <% }) %>
 
       </ul>
-      <input class="btn btn-save" type="submit" value="opslaan">
+
     </form>
 
   </main>

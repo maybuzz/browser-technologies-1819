@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Mono|Squada+One|Staatliches|Vast+Shadow');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
 /* colors */
 :root {
@@ -9,7 +9,6 @@
   --color-text-special: #5444D7;
   --color-backgr-light: #FFF;
   --color-backgr-middle: #ccc;
-  /* --color-overlay: rgba(44,62,80,.65); */
   --color-overlay: rgba(13,0,112,.6);
   --color-white: rgba(255, 255, 255, .4);
   --color-item: rgba(250, 250, 250, .95);
@@ -359,28 +358,17 @@ ul[class="nav"] li:last-of-type {
 @media (min-width: 36em) {
 
   main, .header, .footer, .progress {
-    width: 55vw;
+    width: 60%;
     margin: auto;
   }
 
-  .header {
-    background-color: none;
-  }
 }
 
 @media (min-width: 65em) {
 
   main, .header, .footer, .progress {
-    width: 40vw;
+    width: 40%;
     margin: auto;
-  }
-
-  .header {
-    background-color: none;
-  }
-
-  .addlist__name:focus ~ .addlist__name-max {
-    width: 10vw;
   }
 
 }
