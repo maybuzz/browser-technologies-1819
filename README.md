@@ -7,7 +7,7 @@ Grocery list application, focused on accessibility and progressive enhancement.
 ### Use case
 `"I'm going grocery shopping and I don't want to forget something. I want to add thing along the way and cross things off when I'm done."`
 
-![groceries app](/img/readme/grocerylist.png)
+![groceries app](/img/readme/main.png)
 
 ## Table of contents
 
@@ -27,11 +27,9 @@ Grocery list application, focused on accessibility and progressive enhancement.
 * [Resources](#Resources)
 
 ## Live demo
-
 Click [here](https://maybuzz-bt.herokuapp.com/) to see my live demo!
 
 ## Install
-
 To install this project you'll have to fork this repository and open your terminal
 
 ```bash
@@ -118,7 +116,7 @@ There are a few enhancements I would like to implement later:
 This application is functional in many ways. Users can create different types of lists; grocery lists, to-do lists, you name it. Tasks can be added and crossed off, even deleted.
 
 #### Usable
-The json database makes it possible to add new lists and items and save them for later. With javascript on, localStorage will even save checked checkboxes. This way users can use the app for real and come back at any time to cross more things off their list.
+The json database makes it possible to add new lists and items and save them for later. With javascript on, localStorage will even save checked checkboxes. This way users can use the app for real and come back at any time to cross more things off their list. Checked items will cross through, this is good user feedback. I think it makes it feel like a real list.
 
 #### Pleasurable
 I think this app could be very pleasurable. It's very simple. Works al the time. No passwords, no logins. Just simple forms and checkboxes. Maybe with some more features, user feedback and animations it would be even better.
@@ -145,7 +143,20 @@ The images below are my pages, showing the different types of colorblindness. Th
 ![items page](img/readme/color-detail.png)
 
 ## Device lab
-...
+During the device lab test on my herokuapp I came across multiple problems. Some of which are caused by the bad user experience of the different devices. I found it hard to pinpoint mistakes in my design that I could change to better the performance.
+
+Below you can see images of my device lab test. The first mobile images are pretty good. Users can add lists and add and delete products. Styling works fine too. The first screen shows the same list multiple times, this is because it shows on multiple devices.
+
+![example](img/devices2/best-mobile.png)
+
+The following images show good and bad performance on the tablets. The first tablet works great. Styling looks good. Functionalities work fine and it doesn't add multiple lists to the first page.
+
+The second tablet shows a bad performance. Styling isn't working correctly. Users can not add lists, adding products also doesn't work.
+
+![example](img/devices2/good-tablet.png)
+![example](img/devices2/bad-tablet.png)
+![example](img/devices2/spacer.png)
+
 
 ### Screenreader
 This app is very simple and works fine with the Voice Over on the macbook pro I tested it on. I leared a few things from this screenreader test. After doing the first test I changed the order of the items on the first page. This way the screenreader will read the items in a logical order, ending with the delete button.
