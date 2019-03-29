@@ -4,20 +4,20 @@
 <body>
   <% include partials/head.ejs %>
 
-  <header class="header">
+  <header class="header header__detail">
     <nav>
       <ul class="nav">
-        <li><a class="back" href="/"><?xml version="1.0" encoding="UTF-8"?>
+        <li><a class="home" href="/"><?xml version="1.0" encoding="UTF-8"?>
         <svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="back" fill="#A69BFF" fill-rule="nonzero">
+                <g id="back" fill="#2f036d" fill-rule="nonzero">
                     <path d="M48,0 C74.4763636,0 96,21.5116364 96,48 C96,74.4763636 74.4763636,96 48,96 C21.5116364,96 0,74.4763636 0,48 C0,21.516 21.516,0 48,0 Z M48,4.36363636 C23.8723636,4.36363636 4.36363636,23.8723636 4.36363636,48 C4.36363636,72.1145455 23.8723636,91.6363636 48,91.6363636 C72.1145455,91.6363636 91.6363636,72.1145455 91.6363636,48 C91.6363636,23.8723636 72.1145455,4.36363636 48,4.36363636 Z" id="Shape"></path>
                     <path d="M50.8423634,24 C51.7232373,24 52.511407,24.5388928 52.8401661,25.3578505 C53.1731225,26.1768081 52.9750362,27.1145831 52.347049,27.7298523 L32.2093358,48.0041892 L52.347049,68.278526 L52.347049,68.274283 C52.7600857,68.6816382 52.9919003,69.2375096 52.9919003,69.8146286 C52.9961158,70.3959624 52.7685232,70.9518555 52.3639131,71.3634472 C51.9550843,71.7750497 51.4029696,72.0041788 50.8255317,71.9999423 C50.2480937,71.9957058 49.7001762,71.7623184 49.2955661,71.3464795 L27.6322032,49.5361421 L27.6322032,49.5403851 C26.7892656,48.6917286 26.7892656,47.3168778 27.6322032,46.4682756 L49.2955661,24.6579383 C49.7001762,24.237852 50.2607284,24.0002281 50.8423634,24.0002281 L50.8423634,24 Z" id="Shape"></path>
                 </g>
             </g>
         </svg></a></li>
-        <li><h1 id="page" class="header__title"><%= name %></h1></li>
-        <li><a class="none" href="#"></a></li>
+        <li><h1 id="page" class="header__title header__title_detail"><%= name %></h1></li>
+        <li><div class="none" href="#"></div></li>
       </ul>
     </nav>
   </header>
@@ -40,7 +40,7 @@
 
               <input class="product__quantity" type="number" value="<%= product.quantity %>" name="quantity_<%= product.name %>">
 
-              <input class="list__remove" formaction="/delete/<%= list.name %>/<%= product.name %>" type="submit" value="delete">
+              <input class="list__remove_detail" formaction="/delete/<%= list.name %>/<%= product.name %>" type="submit" value="delete">
 
           </li>
         <% }) %>
@@ -51,11 +51,11 @@
 
   </main>
 
-  <footer class="footer">
+  <footer class="footer footer__detail">
     <form class="additem" action="/<%= list.name %>" method="POST">
       <input class="item__name" type="text" name="product" placeholder="Product name...">
       <input class="item__quantity" type="number" name="quantity" value="1" placeholder="1">
-      <input class="btn btn-add" type="submit" name="add-product" value="+">
+      <input class="btn-add btn-detail" type="submit" name="add-product" value="+">
     </form>
   </footer>
 

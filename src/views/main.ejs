@@ -4,13 +4,9 @@
 <body>
   <% include partials/head.ejs %>
 
-  <header class="header">
+  <header class="header header__main">
     <nav>
-      <ul class="nav">
-        <li><a class="none" href="/"></a></li>
-        <li><h1 class="header__title">lijsten</h1></li>
-        <li><a class="none" href="/"></a></li>
-      </ul>
+      <h1 class="header__title_main">lijsten</h1>
     </nav>
   </header>
 
@@ -23,7 +19,7 @@
               <h2 class="list__name"><%= list.name %></h2>
               <p class="list__number">total: <%= list.items.length %></p>
               <p class="list__date"><%= list.date %></p>
-              <input id="remove" class="list__remove" formaction="/remove/<%= list.name %>" type="submit" value="delete">
+              <input class="list__remove" formaction="/remove/<%= list.name %>" type="submit" value="delete">
             </a>
           </form>
         </li>
@@ -31,7 +27,7 @@
     </ul>
   </main>
 
-  <footer class="footer">
+  <footer class="footer footer__main">
 
     <form class="addlist" action="/" method="POST">
       <input class="addlist__name" type="text" name="list" placeholder="name your list...">

@@ -34,17 +34,22 @@ function addList(req, res) {
 
   const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
 
-  const newList = {
-    name: req.body.list.toLowerCase(),
-    date: new Date().toDateString(),
-    items: []
+  if (req.body.list.length > 0) {
+
+    const newList = {
+      name: req.body.list.toLowerCase(),
+      date: new Date().toDateString(),
+      items: []
+    }
+
+    data.push(newList)
+
+    fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+    res.redirect('/' + newList.name)
+  } else {
+    res.redirect('/')
   }
 
-  data.push(newList)
-
-  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
-
-  res.redirect('/' + newList.name)
 }
 
 function removeList(req, res, err){
@@ -80,7 +85,7 @@ function detail(req, res) {
   })
 }
 
-function addTask(req, res) {
+function addTask(req, res, err) {
   console.log("add product to list")
 
   const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
