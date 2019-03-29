@@ -128,7 +128,7 @@ There are a few features in this app that could use some detection. Such as loca
 
 I used [caniuse.com](https://caniuse.com/) to check the support of several features I use. As you can see these features are supported well in almost all browsers. The least supported feature are the `CSS variables` i use to set colors. Still, I think 90% is a fair percentage.
 
-![localStorage browser support](img/readme/localStorage.png)
+![localStorage browser support](img/readme/localstorage.png)
 ![display grid browser support](img/readme/grid.png)
 ![css variables browser support](img/readme/var.png)
 
@@ -139,12 +139,13 @@ These are the types of colorblind-settings offered by the plugin.
 
 ![example](img/readme/tool.png)
 
-The images below are my pages, showing the different types of colorblindness.
+The images below are my pages, showing the different types of colorblindness. The first screen on the shows the current design. The first screens show the lists. The seconds screens show the items in the list.
 
-![example](img/readme/color-main.png)
-![example](img/readme/color-detail.png)
+![lists page](img/readme/color-main.png)
+![items page](img/readme/color-detail.png)
 
 ## Device lab
+...
 
 ### Screenreader
 This app is very simple and works fine with the Voice Over on the macbook pro I tested it on. I leared a few things from this screenreader test. After doing the first test I changed the order of the items on the first page. This way the screenreader will read the items in a logical order, ending with the delete button.
