@@ -198,6 +198,8 @@ Overall the apps works with tabs. All the functionalities are usable. Decent lab
 * [ ] Client side enhancements
   * [x] localStorage
   * [ ] Progress bar
+* [ ] Feature detection
+  * [x] localStorage
 * [ ] Extra's
   * [x] Set date
   * [x] JSON database
