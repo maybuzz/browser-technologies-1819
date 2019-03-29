@@ -124,6 +124,15 @@ I think this app could be very pleasurable. It's very simple. Works al the time.
 ## Feature detection
 There are a few features in this app that could use some detection. Such as localStorage. When javascript is disabled, best practice would be to inform the user of the fact that checked items will not be saved.
 
+```js
+if (storageAvailable('localStorage')) {
+  // code to check localStorage
+} else {
+  // for now Im serving an alert to tell users localStorage is not detected
+  console.alert("localStorage is not detected. Checked boxes will not be saved to the database. Open this is a browser that does support localStorage.")
+}
+```
+
 I used [caniuse.com](https://caniuse.com/) to check the support of several features I use. As you can see these features are supported well in almost all browsers. The least supported feature are the `CSS variables` i use to set colors. Still, I think 90% is a fair percentage.
 
 ![localStorage browser support](img/readme/localstorage.png)
@@ -155,6 +164,9 @@ The second tablet shows a bad performance. Styling isn't working correctly. User
 
 ![example](img/devices2/good-tablet.png)
 ![example](img/devices2/bad-tablet.png)
+
+Last but not least, this device wouldn't let me type in stuff in the input field. This happened with multiple devices. But this is out of my hands.
+
 ![example](img/devices2/spacer.png)
 
 
