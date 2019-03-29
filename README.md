@@ -209,6 +209,7 @@ Overall the apps works with tabs. All the functionalities are usable. Decent lab
 - [Color contrast checker](https://color.review/)
 - [Colorblinding tool](https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa)
 - [Slackoverflow addeventlistener question](https://stackoverflow.com/questions/42080365/using-addeventlistener-and-getelementsbyclassname-to-pass-an-element-id/42080408)
+- [localStorage feature detection](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Feature-detecting_localStorage)
 
 <!-- ## Criteria
 
