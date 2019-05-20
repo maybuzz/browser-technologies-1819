@@ -22,21 +22,21 @@
     </nav>
   </header>
 
-
   <main>
 
     <form class="product__form" action="/save/<%= list.name %>" method="post">
 
+      <button class="btn-save2" type="submit" name="button">save</button>
       <ul class="products">
 
         <% list.items.forEach(product => { %>
           <li class="products__product">
 
-              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" value="<%= product.name %>">
+              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" checked="<%= product.checkbox === 'on' %>">
 
               <label for="<%= product.name %>" class="product__name"><%= product.name %></label>
 
-              <input type="hidden" name="checked_<%= product.name %>" value="<%= product.checked %>">
+              <!-- <input type="hidden" name="checked_<%= product.name %>" value="<%= product.checked %>"> -->
 
               <input class="product__quantity" type="number" value="<%= product.quantity %>" name="quantity_<%= product.name %>">
 

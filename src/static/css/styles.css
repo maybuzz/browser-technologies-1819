@@ -194,6 +194,27 @@ ul[class="nav"] li:last-of-type {
   color: #fff;
 }
 
+.btn-save2 {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  margin-top: -2.6rem;
+  margin-left: 78.5%;
+  border: solid 1px indianred;
+  border-radius: 10px;
+  position: absolute;
+  display: block;
+  width: 20%;
+  background-color: indianred;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.btn-save2:hover, .btn-save2:focus {
+  background-color: #fff;
+  color: indianred;
+  border: solid 1px indianred;
+}
+
 /* form */
 /* add product */
 .additem {
@@ -418,6 +439,11 @@ ul[class="nav"] li:last-of-type {
     width: 60%;
     margin: auto;
   }
+
+  .btn-save2 {
+    margin-left: 44%;
+    width: 15%;
+  }
 }
 
 @media (min-width: 65em) {
@@ -427,5 +453,10 @@ ul[class="nav"] li:last-of-type {
   .progress {
     width: 40%;
     margin: auto;
+  }
+
+  .btn-save2 {
+    margin-left: 29.25%;
+    width: 10%;
   }
 }

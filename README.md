@@ -58,11 +58,10 @@ The core functionalities of this application are:
 3. Check items off list
 
 4. Remove items from list
-6. Edit items
 
 5. Save progress
 
-I managed to workout most of these functionalities. Number `6. Edit items` didn't make it through -yet-. The progress feedback to the user isn't worked out yet. At least nog client side. The server shows the total amount of items in the list.
+I managed to workout most of these functionalities. The progress feedback to the user isn't worked out yet. At least not client side. The server shows the total amount of items in the list.
 
 ## Functionalities
 * [x] Add lists
@@ -101,15 +100,10 @@ There are a few enhancements I would like to implement later:
 
 - `progress bar` + `progress counter`
 
-- `inline editing` lists or items
-
 - `warning` users before deleting items
 
 - `side menu` -> for fast(er) navigation in case the user navigates to the wrong list
-- `adding the same items to 1 list` -> checking the input before writing it to the database and warning the user
 
-- `negative values` in product quantities
-- delete items when focussing on an item and pressing enter -> pressing enter while focussing of the form will trigger the submit button. I should have disabled this but I noticed it too late.
 
 ### Three layers
 #### Functional
