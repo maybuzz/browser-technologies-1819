@@ -99,8 +99,6 @@ function addTask(req, res, err) {
       }
     })
 
-    console.log(list.items);
-
     const newProduct = {
       name: req.body.product,
       quantity: req.body.quantity,
@@ -118,10 +116,11 @@ function addTask(req, res, err) {
 function saveTasks(req, res, err) {
   console.log("save tasks")
 
-
   const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
 
   const list = data.find(list => list.name === req.params.name.toLowerCase())
+
+  console.log("list", list);
 
   const body = Object.entries(req.body)
 
@@ -154,7 +153,14 @@ function saveTasks(req, res, err) {
     return {name: item.name, quantity, checkbox }
   })
 
-  console.log("folly", newList, list.items)
+  console.log("folly", newList)
+  console.log("old", list.items)
+
+  list.items = []
+
+  for (var i = 0; i < newList.length; i++) {
+    list.items.push(newList[i])
+  }
 
   fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
 

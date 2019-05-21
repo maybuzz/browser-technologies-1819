@@ -32,11 +32,13 @@
         <% list.items.forEach(product => { %>
           <li class="products__product">
 
-              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" checked="<%= product.checkbox === 'on' %>">
+            <% if(product.checkbox === "on") { %>
+              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" checked="checked">
+            <% } else { %>
+              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>">
+            <% } %>
 
               <label for="<%= product.name %>" class="product__name"><%= product.name %></label>
-
-              <!-- <input type="hidden" name="checked_<%= product.name %>" value="<%= product.checked %>"> -->
 
               <input class="product__quantity" type="number" value="<%= product.quantity %>" name="quantity_<%= product.name %>">
 
