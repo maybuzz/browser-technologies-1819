@@ -117,12 +117,13 @@ function saveTasks(req, res, err) {
   console.log("save tasks")
 
   const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
-
+  const body = Object.entries(req.body)
   const list = data.find(list => list.name === req.params.name.toLowerCase())
 
-  console.log("list", list);
-
-  const body = Object.entries(req.body)
+  if (!list) {
+    // bestaat niet, dus render 404
+    return res.render('error.ejs')
+  }
 
   const newList = list.items.map(item => {
     // {name: doeg, ...}
@@ -153,9 +154,6 @@ function saveTasks(req, res, err) {
     return {name: item.name, quantity, checkbox }
   })
 
-  console.log("folly", newList)
-  console.log("old", list.items)
-
   list.items = []
 
   for (var i = 0; i < newList.length; i++) {
@@ -163,11 +161,6 @@ function saveTasks(req, res, err) {
   }
 
   fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
-
-  if (!list) {
-    // bestaat niet, dus render 404
-    return res.render('error.ejs')
-  }
 
   res.redirect('/'+req.params.name.toLowerCase())
 }

@@ -23,8 +23,12 @@
   </header>
 
   <main>
+    <div class="progressbar-container">
+      <div class="progressbar-bar"></div>
+      <div class="progressbar-label"></div>
+    </div>
 
-    <form class="product__form" action="/save/<%= list.name %>" method="post">
+    <form class="product__form" name="form" action="/save/<%= list.name %>" method="post">
 
       <button class="btn-save2" type="submit" name="button">save</button>
       <ul class="products">
@@ -33,9 +37,9 @@
           <li class="products__product">
 
             <% if(product.checkbox === "on") { %>
-              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>" checked="checked">
+              <input id="<%= product.name %>" class="checked checkbox product__check" type="checkbox" name="checkbox_<%= product.name %>" checked>
             <% } else { %>
-              <input id="<%= product.name %>" class="product__check" type="checkbox" name="checkbox_<%= product.name %>">
+              <input id="<%= product.name %>" class="checkbox product__check" type="checkbox" name="checkbox_<%= product.name %>">
             <% } %>
 
               <label for="<%= product.name %>" class="product__name"><%= product.name %></label>

@@ -1,57 +1,45 @@
-// resource addEventListener: https://stackoverflow.com/questions/42080365/using-addeventlistener-and-getelementsbyclassname-to-pass-an-element-id/42080408
-// Monika @monikaas helped me write this save function
+const form = document.getElementsByName("form")
+const inputs = document.getElementsByClassName("checkbox")
+const checked = document.getElementsByClassName("checked")
+const progressBar = document.getElementsByClassName("progressbar-bar")
 
-// Checking if storage is available in different browsers
-function storageAvailable(type) {
-    var storage;
-    try {
-        storage = window[type];
-        var x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch(e) {
-        return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            (storage && storage.length !== 0);
-    }
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("change", () => {
+    form[0].submit()
+  })
 }
 
-if (storageAvailable('localStorage')) {
-  const el = document.getElementsByClassName("product__check");
-  let i = el.length;
-  const quantity = document.getElementsByClassName("product__quantity");
-  const list = document.getElementById("page").innerHTML;
+progress()
 
-  for (let i = 0; i < el.length; i++) {
-    (index => {
-      el[index].addEventListener("click", save);
-    })(i);
+function progress() {
+  // get box count
+  let count = inputs.length;
+  let done = checked.length;
+
+  console.log(count)
+  console.log(done)
+
+  // count total blocks
+  for(var i = 0; i < count; i++){
+     var newDiv = document.createElement('div')
+     newDiv.setAttribute('class', 'block')
+     progressBar[0].appendChild(newDiv)
   }
 
-  function save() {
-    for (i = 0; i < el.length; i++) {
-      localStorage.setItem(list + "-" + el[i].value, el[i].checked);
-    }
-    console.log(localStorage);
+  for(var i = 0; i < done; i++){
+     var newnewDiv = document.getElementsByClassName('block')
+     newnewDiv[0].classList.add("done")
   }
 
-  //for loading
-  for (i = 0; i < el.length; i++) {
-    el[i].checked =
-      localStorage.getItem(list + "-" + el[i].value) === "true" ? true : false;
-  }
-}
-else {
-  console.alert("localStorage is not detected. Checked boxes will not be saved to the database. Open this is a browser that does support localStorage.")
+  // for (var i = 0; i < count; i++) {
+  //   inputs[i].addEventListener("change", () => {
+  //
+  //       // calculate percentage + set label
+  //       var percentage = parseInt(((done / count) * 100),10);
+  //       document.getElementsByClassName("progressbar-bar").progressbar({
+  //               value: percentage
+  //           });
+  //       $(".progressbar-label").text(percentage + "%")
+  //   })
+  // }
 }
