@@ -22,7 +22,7 @@ app
   .listen(process.env.PORT || 1999)
 
 function index(req, res) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   res.render('main.ejs', {
     lists: data
@@ -30,7 +30,7 @@ function index(req, res) {
 }
 
 function addList(req, res) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   if (req.body.list.length > 0) {
 
@@ -51,7 +51,7 @@ function addList(req, res) {
 }
 
 function removeList(req, res, err){
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   let id = req.params.id
 
@@ -63,7 +63,7 @@ function removeList(req, res, err){
 }
 
 function detail(req, res) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   const list = data.find(list => list.name === req.params.name.toLowerCase())
   const totalLists = data
@@ -81,7 +81,7 @@ function detail(req, res) {
 }
 
 function addTask(req, res, err) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   if (req.body.product.length > 0) {
     let list
@@ -106,7 +106,7 @@ function addTask(req, res, err) {
 }
 
 function saveTasks(req, res, err) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
   const body = Object.entries(req.body)
   const list = data.find(list => list.name === req.params.name.toLowerCase())
 
@@ -156,7 +156,7 @@ function saveTasks(req, res, err) {
 }
 
 function removeTask(req, res) {
-  const data = JSON.parse(fs.readFileSync('./src/static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'static/db/lists.json', 'UTF8')))
 
   const name = req.params.name
   let id = req.params.id
