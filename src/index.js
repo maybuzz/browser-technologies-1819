@@ -11,7 +11,7 @@ app
   .use(express.static(path.join(__dirname, 'static')))
   .use(bodyParser.urlencoded({ extended: true }))
   .set('view engine', 'ejs')
-  .set('views', path.join(__dirname, 'views'));
+  .set('views', path.join(__dirname, 'views'))
   .get('/', index)
   .post('/', addList)
   .post('/remove/:id', removeList)
@@ -42,7 +42,7 @@ function addList(req, res) {
 
     data.push(newList)
 
-    fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+    fs.writeFileSync(path.join(__dirname, 'static/db/lists.json'), JSON.stringify(data))
     res.redirect('/' + newList.name)
   } else {
     res.redirect('/')
@@ -57,7 +57,7 @@ function removeList(req, res, err){
 
   const updatedLists = data.filter(list => list.name !== id)
 
-  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(updatedLists))
+  fs.writeFileSync(path.join(__dirname, 'static/db/lists.json'), JSON.stringify(updatedLists))
 
   res.redirect('/')
 }
@@ -99,7 +99,7 @@ function addTask(req, res, err) {
 
     list.items.push(newProduct)
 
-    fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+    fs.writeFileSync(path.join(__dirname, 'static/db/lists.json'), JSON.stringify(data))
   }
 
   res.redirect('/'+req.params.name.toLowerCase())
@@ -150,7 +150,7 @@ function saveTasks(req, res, err) {
     list.items.push(newList[i])
   }
 
-  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+  fs.writeFileSync(path.join(__dirname, 'static/db/lists.json'), JSON.stringify(data))
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
@@ -167,7 +167,7 @@ function removeTask(req, res) {
 
   list.items = updatedItems
 
-  fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
+  fs.writeFileSync(path.join(__dirname, 'static/db/lists.json'), JSON.stringify(data))
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
