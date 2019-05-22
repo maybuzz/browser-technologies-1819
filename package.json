@@ -1,11 +1,11 @@
 {
-  "name": "browser-tech-assignment",
+  "name": "doto-list",
   "version": "1.0.0",
   "description": "minor web-dev browser technologies assignment 2",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js -i src/static",
-    "start": "node src/index.js",
+    "dev": "nodemon index.js -i src/static",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "file-system": "^2.2.2",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "now": "^15.3.0"
   }
 }
