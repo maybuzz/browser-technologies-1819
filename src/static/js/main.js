@@ -9,6 +9,7 @@ for (var i = 0; i < inputs.length; i++) {
   })
 }
 
+
 progress()
 
 function progress() {
@@ -28,8 +29,9 @@ function progress() {
 
   for(var i = 0; i < done; i++){
      var newnewDiv = document.getElementsByClassName('block')
-     newnewDiv[0].classList.add("done")
+     newnewDiv[i].classList.add("done")
   }
+
 
   // for (var i = 0; i < count; i++) {
   //   inputs[i].addEventListener("change", () => {

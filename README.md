@@ -27,7 +27,7 @@ Grocery list application, focused on accessibility and progressive enhancement.
 * [Resources](#Resources)
 
 ## Live demo
-Click [here](https://maybuzz-bt.herokuapp.com/) to see my live demo!
+Click [here](https://dotolist.herokuapp.com/) to see my live demo!
 
 ## Install
 To install this project you'll have to fork this repository and open your terminal
@@ -73,7 +73,6 @@ I managed to workout most of these functionalities. The progress feedback to the
 * [x] Save stuff in database, **server**
 * [x] Save stuff in localStorage, **client**
 * [ ] Edit list- and product names
-* [ ] Side menu
 * [ ] Progress feedback
 
 
@@ -173,7 +172,6 @@ This app is very simple and works fine with the Voice Over on the macbook pro I 
 Overall the apps works with tabs. All the functionalities are usable. Decent labels for links and buttons will give screen-reader-users the right information, instead of "link" or "X" or "read more".
 
 ## To-do
-
 * [x] Device lab
 * [x] Screen reader test
 * [x] Flowchart
@@ -185,15 +183,17 @@ Overall the apps works with tabs. All the functionalities are usable. Decent lab
 * [x] Form actions
   * [x] Add
   * [x] Remove
-  * [ ] Edit
 * [ ] Server side enhancements
+  * [x] Checkboxes to server
   * [x] Show total amount of items
   * [ ] Checked items counter
 * [ ] Client side enhancements
-  * [x] localStorage
+  * [x] Auto submit form
+  * [ ] Remove submit button
   * [ ] Progress bar
 * [ ] Feature detection
-  * [x] localStorage
+  * [ ] JavaScript
+  * [ ] EventListeners
 * [ ] Extra's
   * [x] Set date
   * [x] JSON database
@@ -206,33 +206,6 @@ Overall the apps works with tabs. All the functionalities are usable. Decent lab
 - [Colorblinding tool](https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa)
 - [Slackoverflow addeventlistener question](https://stackoverflow.com/questions/42080365/using-addeventlistener-and-getelementsbyclassname-to-pass-an-element-id/42080408)
 - [localStorage feature detection](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Feature-detecting_localStorage)
-
-<!-- ## Criteria
-
-<details><summary>Assignment 2</summary>
-<ul>
-  <li>[x] De code staat in een repository op GitHub</li>
-  <li>De demo is opgebouwd in 3 lagen, volgens het principe van Progressive Enhancement</li>
-  <li>Student kan de Basic functionaliteit van een use case doorgronden</li>
-  <li>Student kan uitleggen wat Progressive Enhancement en Feature Detectie is en hoe dit toe te passen in Web Development</li>
-</ul>
-
-<details><summary>Readme</summary>
-<ul>
-  <li>[x] Een (wireflow) schets van de functionaliteit met een beschrijving van de core functionality. Geef ook aan wat de  functional, reliable, usable en pleasurable laag.</li>
-  <li>[x] Een beschrijving van de feature(s)/Browser Technologies</li>
-  <li>Welke browser de feature(s) wel/niet ondersteunen</li>
-  <li>Een beschrijving van de accessibility issues die zijn onderzocht</li>
-</ul>
-</details>
-
-<details><summary>UX demo</summary>
-<ul>
-  <li>[x] De leesbaarheidsregels zijn toegepast, contrast en kleuren kloppen</li>
-  <li>Het heeft een gebruiksvriendelijke interface, met gebruikmaking van affordance en feedback op de interactieve elementen</li>
-  <li>Met meest 'enhanced' versie is super vet, gaaf en h-e-l-e-maal te leuk om te gebruiken</li>
-</ul>
-</details> -->
 
 ## License
 

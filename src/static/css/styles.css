@@ -2,6 +2,7 @@
 
 /* colors */
 :root {
+  --block-width: ;
   --color-text: #000;
   --color-text-light: #fff;
   --color-text-middle: #757575;
@@ -197,7 +198,8 @@ ul[class="nav"] li:last-of-type {
 .btn-save2 {
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
-  margin-top: -2.6rem;
+  /* margin-top: -2.6rem; */
+  margin-top: -4.59rem;
   margin-left: 78.5%;
   border: solid 1px indianred;
   border-radius: 10px;
@@ -352,7 +354,7 @@ ul[class="nav"] li:last-of-type {
 
 .products {
   padding: 0 0.5rem;
-  height: 83.3vh;
+  height: 78.5vh;
   overflow: auto;
 }
 
@@ -411,10 +413,9 @@ ul[class="nav"] li:last-of-type {
 
 /* progressbar */
 .block {
-  height: 1rem;
-  width: 1rem;
-  background-color: #ccc;
-  display: inline-block;
+  height: 2rem;
+  flex: 1;
+  background-color: var(--color-white);
 }
 
 .done {
@@ -427,9 +428,8 @@ ul[class="nav"] li:last-of-type {
 }
 
 .progressbar-bar {
-  height: 1rem;
-  margin: 1rem 0;
-  border-radius: 7px;
+  height: 2rem;
+  display: flex;
 }
 
 .progressbar-label {
