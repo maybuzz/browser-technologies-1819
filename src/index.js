@@ -21,9 +21,7 @@ app
   .listen(process.env.PORT || 1999)
 
 function index(req, res) {
-  console.log("index")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   res.render('main.ejs', {
     lists: data
@@ -31,9 +29,7 @@ function index(req, res) {
 }
 
 function addList(req, res) {
-  console.log("redirect to list")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   if (req.body.list.length > 0) {
 
@@ -45,7 +41,7 @@ function addList(req, res) {
 
     data.push(newList)
 
-    fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
+    fs.writeFileSync('./static/db/lists.json', JSON.stringify(data))
     res.redirect('/' + newList.name)
   } else {
     res.redirect('/')
@@ -54,22 +50,19 @@ function addList(req, res) {
 }
 
 function removeList(req, res, err){
-  console.log("remove list")
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   let id = req.params.id
 
   const updatedLists = data.filter(list => list.name !== id)
 
-  fs.writeFileSync('static/db/lists.json', JSON.stringify(updatedLists))
+  fs.writeFileSync('./static/db/lists.json', JSON.stringify(updatedLists))
 
   res.redirect('/')
 }
 
 function detail(req, res) {
-  console.log("detail")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   const list = data.find(list => list.name === req.params.name.toLowerCase())
   const totalLists = data
@@ -87,9 +80,7 @@ function detail(req, res) {
 }
 
 function addTask(req, res, err) {
-  console.log("add product to list")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   if (req.body.product.length > 0) {
     let list
@@ -107,16 +98,14 @@ function addTask(req, res, err) {
 
     list.items.push(newProduct)
 
-    fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
+    fs.writeFileSync('./static/db/lists.json', JSON.stringify(data))
   }
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
 
 function saveTasks(req, res, err) {
-  console.log("save tasks")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
   const body = Object.entries(req.body)
   const list = data.find(list => list.name === req.params.name.toLowerCase())
 
@@ -160,15 +149,13 @@ function saveTasks(req, res, err) {
     list.items.push(newList[i])
   }
 
-  fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
+  fs.writeFileSync('./static/db/lists.json', JSON.stringify(data))
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
 
 function removeTask(req, res) {
-  console.log("remove task")
-
-  const data = JSON.parse(fs.readFileSync('static/db/lists.json', 'UTF8'))
+  const data = JSON.parse(fs.readFileSync('./static/db/lists.json', 'UTF8'))
 
   const name = req.params.name
   let id = req.params.id
@@ -179,7 +166,7 @@ function removeTask(req, res) {
 
   list.items = updatedItems
 
-  fs.writeFileSync('static/db/lists.json', JSON.stringify(data))
+  fs.writeFileSync('./static/db/lists.json', JSON.stringify(data))
 
   res.redirect('/'+req.params.name.toLowerCase())
 }
