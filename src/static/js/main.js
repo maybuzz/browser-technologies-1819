@@ -6,8 +6,23 @@ const progressBar = selectorChecker(".progressbar-bar")
 const progressLabel = selectorChecker(".progressbar-label")
 const saveBtn = selectorChecker(".saveBtn")
 
+// remove btn when js is enabled
 saveBtn[0].classList.add('none')
 
+// call progressbar
+progress()
+
+// feature detection
+function selectorChecker(q) {
+    if ("querySelectorAll" in document) {
+        return document.querySelectorAll(q)
+    } else {
+        q = q.substr(1)
+        return document.getElementsByClassName(q)[0]
+    }
+}
+
+// submit form on change -> checkbox
 for (var i = 0; i < inputs.length; i++) {
   saveBtn[0].classList.add('none')
   inputs[i].addEventListener("change", () => {
@@ -15,6 +30,7 @@ for (var i = 0; i < inputs.length; i++) {
   })
 }
 
+// submit form on change -> quantity
 for (var i = 0; i < quantity.length; i++) {
   saveBtn[0].classList.add('none')
   quantity[i].addEventListener("change", () => {
@@ -22,8 +38,7 @@ for (var i = 0; i < quantity.length; i++) {
   })
 }
 
-progress()
-
+// progressbar function
 function progress() {
   let count = inputs.length
   let done = checked.length
@@ -49,13 +64,4 @@ function progress() {
        text.textContent = percentage +  "%"
        progressBar[0].appendChild(text)
   }
-}
-
-function selectorChecker(q) {
-    if ("querySelectorAll" in document) {
-        return document.querySelectorAll(q)
-    } else {
-        q = q.substr(1)
-        return document.getElementsByClassName(q)[0]
-    }
 }
