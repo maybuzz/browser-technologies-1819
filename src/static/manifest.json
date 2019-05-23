@@ -1,0 +1,17 @@
+{
+  "name": "DOTO list",
+  "short_name": "doto",
+  "icons": [{
+    "src": "img/doto.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }, {
+      "src": "img/dotoSmall.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#a69bff",
+  "theme_color": "#e2e2e2"
+}

@@ -8,11 +8,13 @@ const fs = require('fs')
 const app = express()
 
 app
+  .use((req, res, next) => { res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 * 60);  next() })
   .use(express.static(path.join(__dirname, '/src/static')))
   .use(bodyParser.urlencoded({ extended: true }))
   .set('view engine', 'ejs')
   .set('views', path.join(__dirname, '/src/views'))
   .get('/', index)
+  .get('/offline', offline)
   .post('/', addList)
   .post('/remove/:id', removeList)
   .get('/:name', detail)
@@ -27,6 +29,10 @@ function index(req, res) {
   res.render('main.ejs', {
     lists: data
   })
+}
+
+function offline(req, res) {
+  res.render('offline.ejs')
 }
 
 function addList(req, res) {

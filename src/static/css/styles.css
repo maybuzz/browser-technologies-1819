@@ -2,7 +2,6 @@
 
 /* colors */
 :root {
-  --block-width: ;
   --color-text: #000;
   --color-text-light: #fff;
   --color-text-middle: #757575;
@@ -40,7 +39,7 @@ body {
   position: relative;
   height: 100vh;
   background-image: url("/img/anime.png");
-  background-color: var(--color-text-CTA);
+  background-color: var(--color-text);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -49,19 +48,12 @@ body {
 main {
   height: 100%;
   overflow: hidden;
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 h1,
 h2 {
   font-family: "PT Mono", sans-serif;
-}
-
-input[type="text"]:hover,
-input[type="text"]:focus,
-input[type="number"]:hover,
-input[type="number"]:focus {
-  border: dashed 1.5px var(--color-CTA-detail);
 }
 
 svg {
@@ -82,6 +74,10 @@ svg:last-of-type {
   list-style-type: none;
 }
 
+.none {
+  display: none !important;
+}
+
 ul[class="nav"] li:first-of-type {
   width: 2rem;
   font-size: 1.5rem;
@@ -98,15 +94,15 @@ ul[class="nav"] li:last-of-type {
 
 .back,
 .menu {
-  color: var(--color-text-dark);
+  color: #00635c;
 }
 
 .header__title_main {
-  color: var(--color-pagetitle);
+  color: #a69bff;
 }
 
 .header__title_detail {
-  color: var(--color-pagetitle-detail);
+  color: #2f036d;
 }
 
 .header {
@@ -119,12 +115,12 @@ ul[class="nav"] li:last-of-type {
 
 .header__detail,
 .footer__detail {
-  background-color: var(--color-detail);
+  background-color: rgba(11, 155, 148, 0.9);
 }
 
 .header__main,
 .footer__main {
-  background-color: var(--color-overlay);
+  background-color: rgba(13, 0, 112, 0.6);
 }
 
 .footer {
@@ -135,21 +131,11 @@ ul[class="nav"] li:last-of-type {
   z-index: 10001;
 }
 
-.footer__link {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: var(--color-text-special);
-}
-
-.footer__link:active {
-  background-color: var(--color-CTA);
-}
-
 /* buttons */
 .btn {
   border: none;
   border-radius: 10px;
-  background-color: var(--color-CTA);
+  background-color: #a69bff;
   font-size: 1.25rem;
   color: var(--color-text-CTA);
 }
@@ -157,9 +143,9 @@ ul[class="nav"] li:last-of-type {
 .btn-detail {
   border: none;
   border-radius: 10px;
-  background-color: var(--color-CTA-detail);
+  background-color: #2f036d;
   font-size: 1.25rem;
-  color: var(--color-text-CTA-detail);
+  color: #0b9b94;
 }
 
 .btn-cancel {
@@ -211,12 +197,6 @@ ul[class="nav"] li:last-of-type {
   font-size: 1rem;
 }
 
-.btn-save2:hover, .btn-save2:focus {
-  background-color: #fff;
-  color: indianred;
-  border: solid 1px indianred;
-}
-
 /* form */
 /* add product */
 .additem {
@@ -259,10 +239,6 @@ ul[class="nav"] li:last-of-type {
   width: 70%;
 }
 
-.addlist__name:focus {
-  margin-bottom: 0;
-}
-
 /* list items */
 .lists {
   height: 83%;
@@ -271,7 +247,7 @@ ul[class="nav"] li:last-of-type {
 }
 
 .lists__list {
-  background-color: var(--color-item);
+  background-color: rgba(250, 250, 250, 0.95);
   margin-bottom: 2rem;
   border-radius: 10px;
 }
@@ -291,14 +267,14 @@ ul[class="nav"] li:last-of-type {
 
 .list__name {
   grid-area: name;
-  color: var(--color-text-special);
+  color: #5444d7;
   display: inline;
   font-size: 1.5rem;
 }
 
 .list__date {
   grid-area: date;
-  color: var(--color-text-middle);
+  color: #757575;
   margin-bottom: 1rem;
   display: inline;
   text-align: right;
@@ -308,7 +284,7 @@ ul[class="nav"] li:last-of-type {
   font-size: 1.1rem;
   text-align: left;
   grid-area: number;
-  color: var(--color-text);
+  color: #000;
   margin-top: 1rem;
 }
 
@@ -337,21 +313,7 @@ ul[class="nav"] li:last-of-type {
   color: var(--color-text-middle);
 }
 
-.list__remove:hover,
-.list__remove:focus,
-.list__remove_detail:hover,
-.list__remove_detail:focus {
-  color: var(--color-text-other);
-  text-decoration: underline;
-}
-
 /* product items */
-.progress {
-  height: 1.5rem;
-  background-color: var(--color-bar);
-  border-bottom: 0.1rem solid green;
-}
-
 .products {
   padding: 0 0.5rem;
   height: 78.5vh;
@@ -379,10 +341,6 @@ ul[class="nav"] li:last-of-type {
   margin-right: 1rem;
 }
 
-.product__check:checked ~ .product {
-  background-color: var(--color-bar);
-}
-
 .product__name {
   font-size: 1.5rem;
   width: 100%;
@@ -401,25 +359,17 @@ ul[class="nav"] li:last-of-type {
   color: var(--color-checked);
 }
 
-/* states */
-.products__product:hover,
-.products__product:focus,
-.lists__list:hover,
-.lists__list:focus {
-  background-color: var(--color-backgr-light);
-  transform: scale(1.01);
-  box-shadow: -10px -8px 20px -4px var(--color-overlay);
-}
-
 /* progressbar */
 .block {
   height: 2rem;
   flex: 1;
   background-color: var(--color-white);
+  transition: all 0.2s ease-in-out;
 }
 
 .done {
   background-color: lightgreen;
+  transition: all 0.2s ease-in-out;
 }
 
 .progressbar-container {
@@ -430,11 +380,12 @@ ul[class="nav"] li:last-of-type {
 .progressbar-bar {
   height: 2rem;
   display: flex;
+  transition: all 0.2s ease-in-out;
 }
 
 .progressbar-label {
   position: absolute;
-  top: 2px;
+  top: .5rem;
   left: 45%;
   z-index: 2;
 }
@@ -459,6 +410,51 @@ ul[class="nav"] li:last-of-type {
 
 .error__text {
   margin-bottom: 2rem;
+}
+
+/* states */
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="number"]:hover,
+input[type="number"]:focus {
+  border: dashed 1.5px var(--color-CTA-detail);
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--color-text-CTA);
+  color: var(--color-CTA);
+}
+
+.btn-detail:hover, .btn-detail:focus {
+  background-color: var(--color-text-CTA-detail);
+  color: var(--color-CTA-detail);
+}
+
+.btn-save2:hover, .btn-save2:focus {
+  background-color: #fff;
+  color: indianred;
+  border: solid 1px indianred;
+}
+
+.addlist__name:focus {
+  margin-bottom: 0;
+}
+
+.list__remove:hover,
+.list__remove:focus,
+.list__remove_detail:hover,
+.list__remove_detail:focus {
+  color: var(--color-text-other);
+  text-decoration: underline;
+}
+
+.products__product:hover,
+.products__product:focus,
+.lists__list:hover,
+.lists__list:focus {
+  background-color: var(--color-backgr-light);
+  transform: scale(1.01);
+  box-shadow: -10px -8px 20px -4px var(--color-overlay);
 }
 
 @media (min-width: 36em) {
