@@ -14,13 +14,13 @@ app
   .set('view engine', 'ejs')
   .set('views', path.join(__dirname, '/src/views'))
   .get('/', index)
-  .get('/offline', offline)
   .post('/', addList)
   .post('/remove/:id', removeList)
   .get('/:name', detail)
   .post('/:name', addTask)
   .post('/save/:name', saveTasks)
   .post('/delete/:name/:id', removeTask)
+  .get('/offline', offline)
   .listen(process.env.PORT || 1999)
 
 function index(req, res) {
@@ -29,10 +29,6 @@ function index(req, res) {
   res.render('main.ejs', {
     lists: data
   })
-}
-
-function offline(req, res) {
-  res.render('offline.ejs')
 }
 
 function addList(req, res) {
@@ -176,4 +172,8 @@ function removeTask(req, res) {
   fs.writeFileSync('./src/static/db/lists.json', JSON.stringify(data))
 
   res.redirect('/'+req.params.name.toLowerCase())
+}
+
+function offline(req, res) {
+  res.render('offline.ejs')
 }
