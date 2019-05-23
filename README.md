@@ -1,7 +1,6 @@
 # Grocery list application
 
 ## Summary
-
 Grocery list application, focused on accessibility and progressive enhancement.
 
 ### Use case
@@ -10,7 +9,6 @@ Grocery list application, focused on accessibility and progressive enhancement.
 ![groceries app](/img/readme/main.png)
 
 ## Table of contents
-
 * [Live demo](#Live-demo)
 * [Install](#Install)
 * [Concept](#Concept)
@@ -115,21 +113,22 @@ The json database makes it possible to add new lists and items and save them for
 I think this app could be very pleasurable. It's very simple. Works al the time. No passwords, no logins. Just simple forms and checkboxes. Maybe with some more features, user feedback and animations it would be even better.
 
 ## Feature detection
-There are a few features in this app that could use some detection. Such as localStorage. When javascript is disabled, best practice would be to inform the user of the fact that checked items will not be saved.
+There are a few features in this app that could use some detection. Such as querySelectorAll. When javascript is disabled, `querySelectorAll` will be replaced by `getElementsByClassName`.
 
 ```js
-if (storageAvailable('localStorage')) {
-  // code to check localStorage
-} else {
-  // for now Im serving an alert to tell users localStorage is not detected
-  console.alert("localStorage is not detected. Checked boxes will not be saved to the database. Open this is a browser that does support localStorage.")
+// feature detection for querySelectorAll
+function selectorChecker(q) {
+    if ("querySelectorAll" in document) {
+        return document.querySelectorAll(q)
+    } else {
+        q = q.substr(1)
+        return document.getElementsByClassName(q)[0]
+    }
 }
 ```
 
-I used [caniuse.com](https://caniuse.com/) to check the support of several features I use. As you can see these features are supported well in almost all browsers. The least supported feature are the `CSS variables` i use to set colors. Still, I think 90% is a fair percentage.
+I used [caniuse.com](https://caniuse.com/) to check the support of some features I use. As you can see these features are supported well in almost all browsers. The least supported feature are the `CSS variables` i use to set colors, so I added full color codes.
 
-![localStorage browser support](img/readme/localstorage.png)
-![display grid browser support](img/readme/grid.png)
 ![css variables browser support](img/readme/var.png)
 
 ## Accessibility
@@ -183,21 +182,19 @@ Overall the apps works with tabs. All the functionalities are usable. Decent lab
 * [x] Form actions
   * [x] Add
   * [x] Remove
-* [ ] Server side enhancements
+* [x] Server side enhancements
   * [x] Checkboxes to server
   * [x] Show total amount of items
-  * [ ] Checked items counter
-* [ ] Client side enhancements
+* [x] Client side enhancements
   * [x] Auto submit form
-  * [ ] Remove submit button
-  * [ ] Progress bar
-* [ ] Feature detection
-  * [ ] JavaScript
-  * [ ] EventListeners
-* [ ] Extra's
+  * [x] Remove submit button
+  * [x] Progress bar
+* [x] Feature detection
+  * [x] ServiceWorker
+  * [x] querySelector
+* [x] Extra's
   * [x] Set date
   * [x] JSON database
-  * [ ] Side menu
 
 ## Resources
 - [Time stamps in js](https://timestamp.online/article/how-to-convert-timestamp-to-datetime-in-javascript)
